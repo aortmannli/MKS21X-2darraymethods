@@ -22,9 +22,14 @@ public class ArrayMethods{
     }
 
     public static int[] allRowSums(int[][] ary){
-      //returns an array of the row sums for each row of ary.
+    //returns an array of the row sums for each row of ary.
     //Index i of the return array contains the sum of elements in row i.
-
+      int len = ary.length;
+      int[] sums = new int[len];
+      for (int i = 0; i < len; i++) {
+        sums[i] = rowSum(ary, i);
+      }
+      return sums;
     }
 
     public static int[] allColSums(int[][] ary){
