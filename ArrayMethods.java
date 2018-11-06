@@ -50,10 +50,23 @@ public class ArrayMethods{
     }
 
     public static boolean isRowMagic(int[][] ary){
-
+      //checks if the array is row-magic (this means that every row has the same row sum).
+      int[] check = allRowSums(ary);
+      for (int i = 1; i < check.length; i++){
+        if (check[i] != check[i - 1]){
+          return false;
+        }
+      }
+      return true;
     }
 
     public static boolean isColumnMagic(int[][] ary){
-
+      int[] check = allColSums(ary);
+      for (int i = 1; i < check.length; i++){
+        if (check[i] != check[i - 1]){
+          return false;
+        }
+      }
+      return true;
     }
 }
