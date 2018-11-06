@@ -33,7 +33,20 @@ public class ArrayMethods{
     }
 
     public static int[] allColSums(int[][] ary){
-
+      int max = 0;
+      for (int i = 0; i < ary.length; i++){
+        if (ary[i].length > max){
+          max = ary[i].length;
+        }
+      }
+      int[] sums = new int[max];
+      for (int x = 0; x < max; x++){
+        sums[x] = columnSum(ary,x);
+      }
+      return sums;
+      //Returns an array with the column sum of each column of ary.
+      //When a row is not long enough to reach the column count it as a zero. (NO indexOutOfBounds should ever occur)
+      //Index i of the return array contains the sum of elements in column i, ignoring any rows that are too short.
     }
 
     public static boolean isRowMagic(int[][] ary){
